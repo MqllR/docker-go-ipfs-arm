@@ -5,7 +5,6 @@ ARG IPFS_VERSION=0.4.17
 ARG ARCH=arm
 ARG IPFS_URL=https://ipfs.io/ipns/dist.ipfs.io/go-ipfs/v${IPFS_VERSION}/go-ipfs_v${IPFS_VERSION}_linux-${ARCH}.tar.gz
 
-ENV IPFS_DATA /data/ipfs
 ENV IPFS_PATH /data/.ipfs
 
 RUN cd /tmp && \
