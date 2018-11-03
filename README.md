@@ -1,13 +1,17 @@
-# Docker for IPFS on arm
+# Docker image for go-ipfs on arm architecture
 
 Small dockerfile for running IPFS on arm architecture.
 
-* Init an IPFS node:
+* Run go-ipfs as a daemon
 ```
-docker run -it --rm -v /data/.ipfs:/data/.ipfs mqll/ipfs init
+docker run -d -p 4001:4001 --name ipfs
+	-e IPFS_PATH=/data/ipfs
+        -e IPFS_STORAGE_MAX=50G
+        -e IPFS_ANNOUNCE='["/ip4/92.120.41.45/tcp/14001"]'
+        -v /data/.ipfs:/data/ipfs mqll/go-ipfs-arm:latest
 ```
 
-* Run IPFS as a daemon (no API, no Gateway from outside):
-```
-docker run -d -p 4001:4001 --name ipfs -v /data/.ipfs:/data/.ipfs mqll/ipfs
-```
+* Options
+IPFS_PATH : Base dir of the ipfs node 
+IPFS_STORAGE_MAX : Max storage available
+IPFS_ANNOUNCE : Swarm addresses to announce to the network
