@@ -12,6 +12,9 @@ docker run -d -p 4001:4001 --name ipfs
 ```
 
 * Options
-IPFS_PATH : Base dir of the ipfs node 
-IPFS_STORAGE_MAX : Max storage available
-IPFS_ANNOUNCE : Swarm addresses to announce to the network
+
+__IPFS_PATH__ : Base dir of the ipfs node
+
+__IPFS_STORAGE_MAX__ : Max storage available
+
+__IPFS_ANNOUNCE__ : Swarm addresses to announce to the network
