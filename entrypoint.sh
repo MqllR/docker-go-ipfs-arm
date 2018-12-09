@@ -22,6 +22,8 @@ test -n $IPFS_STORAGE_MAX && \
 test -n $IPFS_ANNOUNCE && \
   sed -i "s#^\(.*\"Announce\).*#\1\": $IPFS_ANNOUNCE,#" $IPFS_PATH/config
 
+sed -i 's#^\(.*API":.*ip4/\).*\(/tcp/5001",\)#\10.0.0.0\2#' $IPFS_PATH/config
+
 if test $# -gt 0
 then
   ipfs daemon $@
