@@ -29,4 +29,4 @@ EXPOSE 5001
 EXPOSE 8080
 EXPOSE 8081
 
-CMD ["./entrypoint.sh"]
+ENTRYPOINT ["./entrypoint.sh"]

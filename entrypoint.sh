@@ -9,6 +9,10 @@ fi
 if ! test -d $IPFS_PATH
 then
   mkdir -p $IPFS_PATH
+fi
+
+if ! test -f $IPFS_PATH/config
+then
   ipfs init
 fi
 
